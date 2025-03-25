@@ -1,0 +1,106 @@
+.item {
+    background: #3d2d28;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 10px;
+    border: 1px solid #53443f;
+}
+
+.item:hover {
+    transform: scale(1.01);
+}
+
+.urgent {
+    border-left: 5px solid #ff2600;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-block-end: 0;
+    margin-block-start: 5px;
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background: #281813;
+    color: white;
+    padding: 0 8px;
+    border-radius: 5px;
+    border: 1px solid #53443f;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.3s, border 0.3s;
+}
+
+.dropdownSelected {
+    padding: 6px 7px;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    background: #281813;
+    border-radius: 5px;
+    border: 1px solid #53443f;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdownItem {
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdownItem:first-child {
+    z-index: 1;
+}
+
+.zTop {
+    position: relative;
+    z-index: 10;
+}
+
+.description {
+    font-size: 14px;
+    color: #eaeaea;
+    margin-bottom: 12px;
+    display: none;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #bbbbbb;
+}
+
+.date {
+    font-style: italic;
+}
+
+.reussie {
+    opacity: 0.5;
+}
+
+.reussie .title {
+    text-decoration: line-through;
+    font-style: italic;
+}

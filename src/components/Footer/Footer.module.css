@@ -1,0 +1,156 @@
+.footer {
+    color: white;
+    padding: 0 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.add, .tasks, .categories {
+    width: 100%;
+}
+
+.add button, .tasks button, .categories button {
+    color: white;
+    background: #53443f;
+    border: 1px solid #695c58;
+    cursor: pointer;
+    padding: .7em 1em;
+    border-radius: 5px;
+    outline: 0;
+    width: 100%;
+}
+
+.add button.active, .tasks button.active, .categories button.active {
+    background: #3d2d28;
+}
+
+.footer .double {
+    gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.modal {
+    color: white;
+    background: #3d2d28;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 1000;
+    border: 1px solid #53443f;
+    border-radius: 8px;
+}
+
+.modal h2 {
+    margin: 0;
+}
+
+.close {
+    color: #ff2600;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form textarea {
+    background: #53443f;
+    border: 1px solid #695c58;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+.form input[type="text"]:focus,
+.form input[type="date"]:focus,
+.form textarea:focus {
+    border-color: #ff2600;
+    box-shadow: 0 0 5px #ff2600;
+}
+
+.form button {
+    background: #ff2600;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+.form input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #ff2600;
+}
+
+.dropdown {
+    background: #53443f;
+    border: 1px solid #695c58;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.selected {
+    user-select: none;
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #3d2d28;
+    border: 1px solid #695c58;
+    border-radius: 5px;
+    width: 100%;
+    z-index: 10;
+}
+
+.option {
+    padding: 10px;
+    cursor: pointer;
+}

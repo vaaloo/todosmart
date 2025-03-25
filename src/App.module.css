@@ -1,0 +1,18 @@
+.app {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app footer {
+    margin-top: auto;
+}
+
+.scrollableTasks {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
