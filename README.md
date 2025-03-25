@@ -55,7 +55,7 @@ Il s’inscrit dans un travail encadré par des consignes précises portant sur 
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/vaaloo/todolist.git
+git clone https://github.com/vaaloo/todosmart.git
 cd todolist
 ```
 
