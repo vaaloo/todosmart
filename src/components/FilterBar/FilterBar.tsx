@@ -2,23 +2,8 @@ import styles from "./FilterBar.module.css";
 import {useState, useEffect, JSX} from "react";
 import { FaSlidersH, FaSortAlphaDown, FaTags, FaStream, FaBolt, FaCheckCircle } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
-
-interface FiltersType {
-    sortBy: string;
-    categories: string[];
-    etats: string[];
-    urgent: string;
-    done: string;
-}
-
-interface FilterBarProps {
-    data: {
-        taches: any[];
-        categories: any[];
-        relations: { tache: number; categorie: number }[];
-    };
-    onFilterChange: (filters: FiltersType) => void;
-}
+import { FiltersType } from "../../types/FiltersType";
+import {FilterBarProps} from "../../types/FilterBarProps";
 
 const FilterBar = ({ data, onFilterChange }: FilterBarProps) => {
     const categories = data.categories || [];

@@ -154,3 +154,18 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.categoryDropdown {
+    background: #53443f;
+    border: 1px solid #695c58;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.categoryDropdown.selected {
+    user-select: none;
+}

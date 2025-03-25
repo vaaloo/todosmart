@@ -7,6 +7,7 @@ import styles from './App.module.css';
 import Tasks from "./components/Tasks/Tasks";
 import {useActivePage} from "./context/ActivePageContext";
 import {FiltersType} from "./types/FiltersType";
+import Categories from "./components/Categories/Categories";
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -44,6 +45,13 @@ function App() {
         setData((prevData: any) => ({
             ...prevData,
             taches: [...prevData.taches, newTask]
+        }));
+    };
+
+    const handleAddCategory = (newCategory: any) => {
+        setData((prevData: any) => ({
+            ...prevData,
+            categories: [...prevData.categories, newCategory],
         }));
     };
 
@@ -103,9 +111,13 @@ function App() {
                         <div className={styles.scrollableTasks}>
                             <Tasks data={data} onEtatChange={handleEtatChange} />
                         </div>
+                    ) : data && activePage === "Category" ? (
+                        <div className={styles.scrollableTasks}>
+                            <Categories data={data} />
+                        </div>
                     ) : null
                 }
-                <Footer onAddTask={handleAddTask} />
+                <Footer onAddTask={handleAddTask} onAddCategory={handleAddCategory} data={data}/>
             </section>
         </>
     );

@@ -1,6 +1,4 @@
-export interface FooterProps {
-    onAddTask: (task: any) => void;
-    onAddCategory: (category: any) => void;
+export interface CategoriesProps {
     data: {
         taches: any[];
         categories: any[];
