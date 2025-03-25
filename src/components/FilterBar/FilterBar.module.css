@@ -1,0 +1,147 @@
+.filterBar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+.group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    color: #ffae8f;
+    font-size: 13px;
+}
+
+.multiSelect {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.multiSelect label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: white;
+}
+
+.dropdown {
+    background: #53443f;
+    border: 1px solid #695c58;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 12px;
+    font-size: 13px;
+    min-width: 140px;
+}
+
+.selected {
+    user-select: none;
+    line-height: 1.4;
+}
+
+.options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background: #3d2d28;
+    border: 1px solid #695c58;
+    border-radius: 6px;
+    padding: 4px 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 13px;
+}
+
+.option:hover {
+    background-color: #ff2600;
+    color: white;
+}
+
+input[type="checkbox"] {
+    accent-color: #ff2600;
+    cursor: pointer;
+}
+
+.toggleButton {
+    margin: 12px 20px;
+    padding: 8px 12px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.iconActive,
+.iconInactive {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.iconInactive {
+    transform: rotate(0deg);
+    color: #ff825a;
+}
+
+.iconActive {
+    transform: rotate(90deg);
+    color: #ff2600;
+}
+
+.modal {
+    background: #3d2d28;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 1000;
+    border: 1px solid #53443f;
+    border-radius: 8px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.close {
+    color: #ff2600;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}

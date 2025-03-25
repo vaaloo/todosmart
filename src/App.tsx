@@ -6,11 +6,19 @@ import Footer from "./components/Footer/Footer";
 import styles from './App.module.css';
 import Tasks from "./components/Tasks/Tasks";
 import {useActivePage} from "./context/ActivePageContext";
+import {FiltersType} from "./types/FiltersType";
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [data, setData] = useState<any>({ taches: [], categories: [], relations: [] });
+    const [data, setData] = useState<{ taches: any[]; categories: any[]; relations: { tache: number; categorie: number }[] }>({ taches: [], categories: [], relations: [] });
     const {activePage} = useActivePage();
+    const [filters, setFilters] = useState<FiltersType>({
+        sortBy: "title",
+        categories: [],
+        etats: [],
+        urgent: "all",
+        done: "all"
+    });
 
     const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -53,6 +61,38 @@ function App() {
     }
 
     const tachesEnCours = data.taches.filter((t: any) => t.etat !== "Reussi" && t.etat !== "Abandonne").length;
+
+    let filtered = [...data.taches];
+
+    if (filters.categories.length > 0) {
+        const relatedTaskIds = data.relations
+            .filter((rel: any) => filters.categories.includes(rel.categorie.toString()))
+            .map((rel: any) => rel.tache);
+        filtered = filtered.filter((t: any) => relatedTaskIds.includes(t.id));
+    }
+
+    if (filters.etats.length > 0) {
+        filtered = filtered.filter((t: any) => filters.etats.includes(t.etat));
+    }
+
+    if (filters.urgent !== "all") {
+        filtered = filtered.filter((t: any) => t.urgent === (filters.urgent === "true"));
+    }
+
+    if (filters.done !== "all") {
+        filtered = filtered.filter((t: any) =>
+            filters.done === "done"
+                ? t.etat === "Reussi"
+                : t.etat !== "Reussi" && t.etat !== "Abandonne"
+        );
+    }
+
+    filtered.sort((a, b) => {
+        if (filters.sortBy === "title") return a.title.localeCompare(b.title);
+        if (filters.sortBy === "date_creation") return a.date_creation.localeCompare(b.date_creation);
+        if (filters.sortBy === "date_echeance") return a.date_echeance.localeCompare(b.date_echeance);
+        return 0;
+    });
 
     return (
         <>

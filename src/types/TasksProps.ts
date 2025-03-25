@@ -1,7 +1,9 @@
-import {Task} from "./Task";
-
 export interface TasksProps {
-    data: { taches: Task[] };
+    data: {
+        taches: any[];
+        categories: any[];
+        relations: { tache: number; categorie: number }[];
+    };
     onEtatChange: (id: number, newEtat: string) => void;
 }
 
