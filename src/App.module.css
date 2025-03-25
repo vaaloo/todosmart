@@ -16,3 +16,60 @@
     overflow-y: auto;
     min-height: 0;
 }
+
+.loadingScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    gap: 24px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    color: #ffae8f;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #cccccc;
+    max-width: 500px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.fileInput {
+    display: none;
+}
+
+.fileLabel {
+    background: #53443f;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: bold;
+}
+
+.startButton {
+    background: #ff2600;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}

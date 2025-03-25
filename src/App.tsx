@@ -61,10 +61,15 @@ function App() {
 
     if (!isLoaded) {
         return (
-            <>
-                <input type="file" accept="application/json" onChange={handleFileUpload} />
-                <button onClick={startFromScratch}>Partir de zéro</button>
-            </>
+            <div className={styles.loadingScreen}>
+                <h1 className={styles.title}>Bienvenue dans TodoSmart</h1>
+                <p className={styles.subtitle}>Commencez en important un fichier JSON ou partez de zéro</p>
+                <div className={styles.actions}>
+                    <input type="file" accept="application/json" onChange={handleFileUpload} id="jsonUpload" className={styles.fileInput} />
+                    <label htmlFor="jsonUpload" className={styles.fileLabel}>Importer un fichier JSON</label>
+                    <button className={styles.startButton} onClick={startFromScratch}>Partir de zéro</button>
+                </div>
+            </div>
         );
     }
 
