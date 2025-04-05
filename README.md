@@ -1,6 +1,7 @@
 # ✅ TodoSmart — Gestionnaire de Tâches & Catégories
 
 **TodoSmart** est une application web moderne et interactive développée dans le cadre d’un projet scolaire de BUT2 à l’IUT. Elle permet de gérer efficacement des tâches et des catégories à travers une interface claire, réactive et personnalisable.
+Elle est adaptée pour mobile uniquement. Elle n'est pas entièrement fonctionnelle est utilisable dans sa version, car absence de base de données.
 
 ---
 
